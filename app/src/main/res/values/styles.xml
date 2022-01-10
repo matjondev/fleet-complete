@@ -17,25 +17,7 @@
         <item name="android:layout_height">match_parent</item>
         <item name="android:orientation">vertical</item>
         <item name="android:focusableInTouchMode">true</item>
-        <item name="android:background">@color/white</item>
-    </style>
-
-    <style name="BottomSheet" parent="@style/Theme.MaterialComponents.Light.BottomSheetDialog">
-        <item name="android:background">@drawable/bottom_sheet_white_rounded</item>
-        <item name="android:elevation">0dp</item>
-    </style>
-
-    <style name="BaseBottomSheetDialog" parent="@style/Theme.Design.Light.BottomSheetDialog">
-        <item name="android:windowIsFloating">false</item>
-        <item name="bottomSheetStyle">@style/BottomSheet</item>
-    </style>
-
-    <style name="BottomSheetDialogTheme" parent="BaseBottomSheetDialog">
-        <item name="android:statusBarColor">@color/black</item>
-        <item name="android:windowBackground">@android:color/transparent</item>
-        <item name="android:navigationBarColor">@color/black</item>
-        <item name="android:windowIsFloating">false</item>
-        <item name="android:windowSoftInputMode">adjustResize</item>
+        <item name="android:background">@color/light_gray</item>
     </style>
 
     <style name="elevationStyle">
@@ -56,4 +38,13 @@
         <item name="android:textColor">@color/hint</item>
         <item name="android:textSize">12sp</item>
     </style>
+
+    <style name="imgStyle">
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+        <item name="android:layout_width">45dp</item>
+        <item name="android:layout_height">45dp</item>
+        <item name="android:padding">12dp</item>
+    </style>
+
 </resources>

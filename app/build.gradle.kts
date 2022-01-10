@@ -29,7 +29,8 @@ android {
     }*/
     buildTypes {
         getByName("debug") {
-            buildConfigField("String", "API_URL", "\"https://testapiurl.com/\"")
+            buildConfigField("String", "API_URL", "\"https://app.ecofleet.com/seeme/Api/\"")
+            buildConfigField("String", "API_KEY", "\"home.assignment.2-1230927\"")
             isDebuggable = true
             isMinifyEnabled = false
             isShrinkResources = false
@@ -37,7 +38,8 @@ android {
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
         }
         create("stage") {
-            buildConfigField("String", "API_URL", "\"https://testapiurl.com/\"")
+            buildConfigField("String", "API_URL", "\"https://app.ecofleet.com/seeme/Api/\"")
+            buildConfigField("String", "API_KEY", "\"home.assignment.2-1230927\"")
             isDebuggable = true
             isMinifyEnabled = false
             isShrinkResources = false
@@ -46,7 +48,8 @@ android {
 
         }
         getByName("release") {
-            buildConfigField("String", "API_URL", "\"https://testapiurl.com/\"")
+            buildConfigField("String", "API_URL", "\"https://app.ecofleet.com/seeme/Api/\"")
+            buildConfigField("String", "API_KEY", "\"home.assignment.2-1230927\"")
             isDebuggable = false
             isMinifyEnabled = false
             isShrinkResources = false

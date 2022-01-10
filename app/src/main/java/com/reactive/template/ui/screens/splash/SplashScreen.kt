@@ -4,7 +4,7 @@ import android.os.CountDownTimer
 import android.view.LayoutInflater
 import com.reactive.template.base.BaseFragment
 import com.reactive.template.databinding.ScreenSplashBinding
-import com.reactive.template.ui.screens.BottomNavScreen
+import com.reactive.template.ui.screens.main.MapScreen
 
 class SplashScreen : BaseFragment<ScreenSplashBinding>() {
 
@@ -16,7 +16,7 @@ class SplashScreen : BaseFragment<ScreenSplashBinding>() {
             }
 
             override fun onFinish() {
-                replaceFragment(BottomNavScreen())
+                replaceFragment(MapScreen())
             }
         }.start()
     }

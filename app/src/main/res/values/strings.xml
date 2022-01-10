@@ -4,4 +4,8 @@
     <string name="check_connection">Проверьте подключение к интернету. И попробуй еще раз</string>
     <string name="slow_internet">Скорость интернета низкая. пожалуйста, подождите</string>
     <string name="smth_wrong">Что-то пошло не так. Пожалуйста, попробуйте еще раз</string>
+    <string name="location_history">Location History: %s</string>
+    <string name="vehicles">Vehicles</string>
+    <string name="s_kmh">%d km/h</string>
+    <string name="s_ago">%s ago</string>
 </resources>

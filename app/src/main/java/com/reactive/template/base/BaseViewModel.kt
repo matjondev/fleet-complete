@@ -9,6 +9,7 @@ import com.google.gson.Gson
 import com.reactive.template.R
 import com.reactive.template.network.ApiInterface
 import com.reactive.template.network.BaseResponse
+import com.reactive.template.utils.Constants
 import com.reactive.template.utils.extensions.loge
 import com.reactive.template.utils.extensions.logi
 import com.reactive.template.utils.network.Errors
@@ -18,6 +19,7 @@ import org.koin.core.component.KoinComponent
 import org.koin.core.component.inject
 import org.koin.core.qualifier.named
 import retrofit2.HttpException
+import retrofit2.http.Query
 
 sealed class SharedActions<T> {
     data class Success<T>(val data: T) : SharedActions<T>()
@@ -42,6 +44,8 @@ open class BaseViewModel(
 
     val shared: MutableLiveData<Any> by inject()
     val data = MutableLiveData<Result<BaseResponse>>()
+    val lastData = MutableLiveData<Result<BaseResponse>>()
+    val rawData = MutableLiveData<Result<BaseResponse>>()
 
     private val api: ApiInterface by inject(named("api"))
 
@@ -99,10 +103,25 @@ open class BaseViewModel(
         }
     }
 
-    fun register() {
+    fun getRawData(
+        begTimestamp: String,
+        endTimestamp: String,
+        objectId: String,
+    ) {
         viewModelScope.launch {
-            catchError(data) {
-                postValue(data, api.register())
+            catchError(rawData) {
+                postValue(
+                    rawData,
+                    api.getRawData(begTimestamp, endTimestamp, objectId, Constants.API_KEY)
+                )
+            }
+        }
+    }
+
+    fun getLastData() {
+        viewModelScope.launch {
+            catchError(lastData) {
+                postValue(lastData, api.getLastData(Constants.API_KEY))
             }
         }
     }
