@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "576105584492",
+    "project_id": "fleet-complete-51444",
+    "storage_bucket": "fleet-complete-51444.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:576105584492:android:8045f762fa1a256a15c549",
+        "android_client_info": {
+          "package_name": "com.fleetcomplete.android"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "576105584492-uuqte36d6kpbptrgdgrsoe7jglrfmg0g.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCcoVfvpDW78iaD5lxhzjMUY1ATeyngpG8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "576105584492-uuqte36d6kpbptrgdgrsoe7jglrfmg0g.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
