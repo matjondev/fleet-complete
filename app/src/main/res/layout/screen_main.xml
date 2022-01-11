@@ -12,6 +12,7 @@
         android:gravity="center_vertical">
 
         <ImageView
+            android:id="@+id/reflesh"
             style="@style/imgStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -30,6 +31,7 @@
             android:textStyle="bold" />
 
         <ImageView
+            android:id="@+id/api_key"
             style="@style/imgStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -47,4 +49,7 @@
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         tools:itemCount="3"
         tools:listitem="@layout/item_vehicles" />
+
+    <include android:id="@+id/shimmer_content"
+        layout="@layout/content_shimmer_layout_main"/>
 </LinearLayout>

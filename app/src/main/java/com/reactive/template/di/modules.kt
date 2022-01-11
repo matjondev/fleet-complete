@@ -8,6 +8,7 @@ import com.google.gson.Gson
 import com.reactive.template.network.ApiInterface
 import com.reactive.template.network.RetrofitClient
 import com.reactive.template.utils.Constants
+import com.reactive.template.utils.extensions.loge
 import org.koin.android.viewmodel.dsl.viewModel
 import org.koin.core.qualifier.named
 import org.koin.dsl.module

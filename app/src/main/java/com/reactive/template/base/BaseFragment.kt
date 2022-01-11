@@ -165,6 +165,8 @@ abstract class BaseFragment<V : ViewBinding> : Fragment() {
         showProgress(false)
         super.onDestroyView()
     }
+
+    operator fun V.invoke(body: V.() -> Unit) = this.body()
 }
 
 const val TARGET_FRAGMENT_REQUEST_CODE = 123

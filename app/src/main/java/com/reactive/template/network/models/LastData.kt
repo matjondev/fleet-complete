@@ -1,0 +1,51 @@
+package com.reactive.template.network.models
+
+import com.reactive.template.network.BaseResponse
+import java.io.Serializable
+
+data class LastDataResp(var response: List<LastData>): BaseResponse()
+data class LastData(
+    val CANDistance: Any? = null,
+    val EVDistanceRemaining: Any? = null,
+    val EVStateOfCharge: Any? = null,
+    val EventType: String,
+    val address: String,
+    val addressArea: Boolean,
+    val addressAreaId: Any? = null,
+    val available: Any? = null,
+    val currentOdometer: Any? = null,
+    val currentWorkhours: Any? = null,
+    val customValues: List<Any>? = null,
+    val direction: Int,
+    val displayColor: Any? = null,
+    val driverId: Int? = null,
+    val driverIsOnDuty: Boolean? = null,
+    val driverKey: Any? = null,
+    val driverName: String? = null,
+    val driverPhone: Any? = null,
+    val driverStatuses: List<Any>? = null,
+    val dutyTags: Any? = null,
+    val employeeId: Any? = null,
+    val enforcePrivacyFilter: Any? = null,
+    val enginestate: Int,
+    val externalId: Any? = null,
+    val fuel: Any? = null,
+    val gpsstate: Boolean,
+    val inPrivateZone: Boolean,
+    val lastEngineOnTime: String,
+    val latitude: Double,
+    val longitude: Double,
+    val objectId: Int,
+    val objectName: String,
+    val offWorkSchedule: Boolean? = null,
+    val orgId: Int,
+    val pairedObjectId: Any? = null,
+    val pairedObjectName: Any? = null,
+    val plate: String,
+    val power: Double,
+    val speed: Int,
+    val tcoCardIsPresent: Boolean,
+    val tcoData: Any? = null,
+    val timestamp: String,
+    val tripPurposeDinSet: Any? = null
+):Serializable

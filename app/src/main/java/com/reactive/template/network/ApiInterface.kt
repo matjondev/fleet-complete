@@ -1,5 +1,8 @@
 package com.reactive.template.network
 
+import com.reactive.template.network.models.LastDataResp
+import com.reactive.template.network.models.RawData
+import com.reactive.template.network.models.RawDataResp
 import com.reactive.template.network.models.Token
 import retrofit2.http.POST
 import retrofit2.http.Query
@@ -14,9 +17,9 @@ interface ApiInterface {
     // region Vehicles Api start
     @POST("Vehicles/getLastData")
     suspend fun getLastData(
-        @Query("fleetcomplete-api-key") apiKey: String,
+        @Query("key") apiKey: String,
         @Query("json") json: Boolean = true
-    ): Token
+    ): LastDataResp
 
     @POST("Vehicles/getRawData")
     suspend fun getRawData(
@@ -25,6 +28,6 @@ interface ApiInterface {
         @Query("objectId") objectId: String,
         @Query("key") apiKey: String,
         @Query("json") json: Boolean = true
-    ): Token
+    ): RawDataResp
     // region Vehicles Api end
 }

@@ -9,6 +9,9 @@ import com.google.gson.Gson
 import com.reactive.template.R
 import com.reactive.template.network.ApiInterface
 import com.reactive.template.network.BaseResponse
+import com.reactive.template.network.models.LastDataResp
+import com.reactive.template.network.RetrofitClient
+import com.reactive.template.network.models.RawDataResp
 import com.reactive.template.utils.Constants
 import com.reactive.template.utils.extensions.loge
 import com.reactive.template.utils.extensions.logi
@@ -17,9 +20,7 @@ import com.reactive.template.utils.preferences.SharedManager
 import kotlinx.coroutines.launch
 import org.koin.core.component.KoinComponent
 import org.koin.core.component.inject
-import org.koin.core.qualifier.named
 import retrofit2.HttpException
-import retrofit2.http.Query
 
 sealed class SharedActions<T> {
     data class Success<T>(val data: T) : SharedActions<T>()
@@ -44,10 +45,12 @@ open class BaseViewModel(
 
     val shared: MutableLiveData<Any> by inject()
     val data = MutableLiveData<Result<BaseResponse>>()
-    val lastData = MutableLiveData<Result<BaseResponse>>()
-    val rawData = MutableLiveData<Result<BaseResponse>>()
+    val lastData = MutableLiveData<Result<LastDataResp>>()
+    val rawData = MutableLiveData<Result<RawDataResp>>()
 
-    private val api: ApiInterface by inject(named("api"))
+    private val api: ApiInterface  = RetrofitClient
+        .getRetrofit(Constants.BASE_URL, sharedManager.token, context, gson)
+        .create(ApiInterface::class.java)
 
     private fun <T : BaseResponse> postValue(
         liveData: MutableLiveData<Result<T>>,
@@ -58,7 +61,7 @@ open class BaseViewModel(
         if (data.isSuccess()) {
             liveData.postValue(Result.Success(data))
             onSuccess(data)
-        } else liveData.postValue(Result.Error(parseError(Throwable(data.exception?.message))))
+        } else liveData.postValue(Result.Error(parseError(Throwable(data.errormessage))))
     }
 
     private suspend fun <T : BaseResponse> catchError(
@@ -81,11 +84,8 @@ open class BaseViewModel(
                 val errorBody = e.response()?.errorBody()?.string()
                 errorBody?.let {
                     try {
-                        val errors = gson.fromJson(it, BaseResponse::class.java).exception
-
-                        errors?.message?.let {
-                            if (it.isNotBlank()) message = it
-                        }
+                        val errors = gson.fromJson(it, BaseResponse::class.java).errormessage
+                        if (!errors.isNullOrBlank()) message = errors
                     } catch (e: Exception) {
                         loge("Error in Parsings ${e.localizedMessage}")
                         e.printStackTrace()

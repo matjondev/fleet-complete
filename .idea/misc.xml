@@ -3,19 +3,19 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="app/src/main/res/layout/content_toolbar.xml" value="0.33697916666666666" />
-        <entry key="app/src/main/res/layout/item_vehicles.xml" value="0.33697916666666666" />
-        <entry key="app/src/main/res/layout/screen_bottom_nav.xml" value="0.315625" />
-        <entry key="app/src/main/res/layout/screen_main.xml" value="0.33697916666666666" />
-        <entry key="app/src/main/res/layout/screen_map.xml" value="0.33697916666666666" />
-        <entry key="app/src/main/res/layout/screen_splash.xml" value="0.315625" />
+        <entry key="..\:/MyFiles/MyApps/fleet-complete1/app/src/main/res/drawable/rounded_white_card.xml" value="0.16041666666666668" />
+        <entry key="..\:/MyFiles/MyApps/fleet-complete1/app/src/main/res/drawable/shimmer_item_text.xml" value="0.16041666666666668" />
+        <entry key="..\:/MyFiles/MyApps/fleet-complete1/app/src/main/res/drawable/shimmer_item_text_dark.xml" value="0.16041666666666668" />
+        <entry key="..\:/MyFiles/MyApps/fleet-complete1/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/MyFiles/MyApps/fleet-complete1/app/src/main/res/layout/content_shimmer_layout_main.xml" value="0.2" />
+        <entry key="..\:/MyFiles/MyApps/fleet-complete1/app/src/main/res/layout/dialog_edit_text.xml" value="0.1" />
+        <entry key="..\:/MyFiles/MyApps/fleet-complete1/app/src/main/res/layout/item_vehicles.xml" value="0.4013605442176871" />
+        <entry key="..\:/MyFiles/MyApps/fleet-complete1/app/src/main/res/layout/screen_main.xml" value="0.1" />
+        <entry key="..\:/MyFiles/MyApps/fleet-complete1/app/src/main/res/layout/screen_map.xml" value="0.33" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="1.8" project-jdk-type="JavaSDK">
-    <output url="file://$PROJECT_DIR$/build/classes" />
-  </component>
-  <component name="ProjectType">
-    <option name="id" value="Android" />
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/out" />
   </component>
 </project>

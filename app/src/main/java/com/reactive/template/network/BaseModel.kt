@@ -7,11 +7,12 @@ data class BaseError(
 )
 
 open class BaseResponse {
-    var success: Boolean = false
-    var exception: BaseError? = null
+    var status:Int = 0
+    var meta:Any? = null
+    var errormessage: String? = null
     var count: Int? = 0
 
-    fun isSuccess() = success
+    fun isSuccess() = errormessage == null
 }
 
 
