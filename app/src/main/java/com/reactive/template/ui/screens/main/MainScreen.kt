@@ -34,7 +34,7 @@ class MainScreen : BaseFragment<ScreenMainBinding>() {
                     showShimmerEffect()
                 }
                 is Result.Error -> {
-//                    showResultContent()
+                    showResultContent()
                     toast(requireContext(),it.error.toString())
                 }
 

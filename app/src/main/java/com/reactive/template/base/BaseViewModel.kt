@@ -20,6 +20,7 @@ import com.reactive.template.utils.preferences.SharedManager
 import kotlinx.coroutines.launch
 import org.koin.core.component.KoinComponent
 import org.koin.core.component.inject
+import org.koin.core.qualifier.named
 import retrofit2.HttpException
 
 sealed class SharedActions<T> {
@@ -48,9 +49,7 @@ open class BaseViewModel(
     val lastData = MutableLiveData<Result<LastDataResp>>()
     val rawData = MutableLiveData<Result<RawDataResp>>()
 
-    private val api: ApiInterface  = RetrofitClient
-        .getRetrofit(Constants.BASE_URL, sharedManager.token, context, gson)
-        .create(ApiInterface::class.java)
+    private val api: ApiInterface by inject(named("api"))
 
     private fun <T : BaseResponse> postValue(
         liveData: MutableLiveData<Result<T>>,
